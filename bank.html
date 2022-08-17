@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Your Bank</title>
+</head>
+<body>
+    <header class="container mx-auto my-10 text-center">
+        <h1 class="text-6xl">Hello Mr. Mehedi. <br><span class="text-purple-500 font-bold">Deposit or Widrow Money</span></h1>
+    </header>
+    <main class="container mx-auto mb-10">
+        <div class="grid grid-cols-3 gap-8 text-white">
+            <div class="bg-gradient-to-r from-violet-500 to-rose-200 rounded-xl px-8 py-10">
+                <h4 class="text-2xl">Deposit</h4>
+                <h2 class="text-5xl">$<span id="deposit-total">00</span></h2>
+            </div>
+            <div class="bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-xl px-8 py-10">
+                <h4 class="text-2xl">Withdrow</h4>
+                <h2 class="text-5xl">$00</h2>
+            </div>
+            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl px-8 py-10">
+                <h4 class="text-2xl">Ammount</h4>
+                <h2 class="text-5xl">$15000</h2>
+            </div>
+        </div>
+    </main>
+    <section class="container mx-auto">
+        <div class="grid grid-cols-2 gap-6">
+            <div class="bg-pink-400 rounded-xl p-10">
+                <h2 class="mb-4 text-4xl text-white font-bold">Deposit Your Money</h2>
+                <input type="text" id="deposit-field" class="block w-full px-4 py-2 rounded mb-3 focus:outline-none" placeholder="$ Amount Deposit">
+                <input type="button" value="Deposit" id="deposit-btn" class="bg-amber-900 rounded-md hover:bg-slate-400 hover:text-yellow-300 block cursor-pointer px-5 py-2 text-white text-xl">
+            </div>
+            <div class="bg-indigo-400 rounded-xl p-10">
+                <h2 class="mb-4 text-4xl text-white font-bold">Withdrow Your Money</h2>
+                <input type="text" id="withdrow-field" class="block w-full px-4 py-2 rounded mb-3 focus:outline-none" placeholder="$ Amount Withdrow">
+                <input type="button" value="Withdrow" id="withdrow-btn" class="bg-amber-900 rounded-md hover:bg-slate-400 hover:text-yellow-300 block cursor-pointer px-5 py-2 text-white text-xl">
+            </div>
+        </div>
+    </section>
+    <script src="js/bank.js"></script>
+</body>
+</html>
