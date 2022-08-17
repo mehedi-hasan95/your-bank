@@ -2,6 +2,12 @@ document.getElementById('deposit-btn').addEventListener('click', function() {
     const depositField = document.getElementById('deposit-field');
     const depositAmmountString = depositField.value;
     const depositAmmount = parseFloat(depositAmmountString);
+
+    depositField.value = '';
+    if(isNaN(depositAmmount)) {
+        alert('Please Entair a Number');
+        return;
+    }
     
     const depositTotal = document.getElementById('deposit-total');
     const depositTotalAmountString = depositTotal.innerHTML;
@@ -16,7 +22,7 @@ document.getElementById('deposit-btn').addEventListener('click', function() {
     const totalPresentBalance = totalPrevBalance + depositAmmount;
     totalBalance.innerText = totalPresentBalance
 
-    depositField.value = '';
+    
 });
 
 document.getElementById('withdrow-btn').addEventListener('click', function() {
@@ -24,24 +30,36 @@ document.getElementById('withdrow-btn').addEventListener('click', function() {
     const withdrowFieldString = withdrowField.value;
     const totalWithdrow = parseFloat(withdrowFieldString);
 
+    withdrowField.value = '';
+
+    if(isNaN(totalWithdrow)) {
+        alert('Please Entair a Number');
+        return;
+    }
+
     const withdrowTotal = document.getElementById('withdrow-total');
     const withdrowTotalString = withdrowTotal.innerText;
     const withdrowTotalAmmount = parseFloat(withdrowTotalString);
 
-    const withdrowAmmount = totalWithdrow + withdrowTotalAmmount;
-    withdrowTotal.innerText = withdrowAmmount;
+    
+
+       
 
     // Total Ballence after withrow deposit 
     const totalBalance = document.getElementById('total-balance');
     const totalBalanceString = totalBalance.innerText;
     const totalPrevBalance = parseFloat(totalBalanceString);
 
+    if(totalWithdrow>totalPrevBalance) {
+        alert('You have not $' + totalWithdrow + ' in your account');
+        return;
+    }
+
+    const withdrowAmmount = totalWithdrow + withdrowTotalAmmount;
+    withdrowTotal.innerText = withdrowAmmount;
+
 
     const totalPresentBalance = totalPrevBalance - totalWithdrow;
     totalBalance.innerText = totalPresentBalance
 
-    
-    
-
-    withdrowField.value = '';
 });
